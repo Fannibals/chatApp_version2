@@ -1,0 +1,6 @@
+module Pods_Chat_Version2 {
+  umbrella header "Pods-Chat-Version2-umbrella.h"
+
+  export *
+  module * { export * }
+}
