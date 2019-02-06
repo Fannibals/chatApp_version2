@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RevealVC.swift
 //  Chat-Version2
 //
 //  Created by Ethan  on 31/1/19.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RevealVC: SWRevealViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-
 }
-

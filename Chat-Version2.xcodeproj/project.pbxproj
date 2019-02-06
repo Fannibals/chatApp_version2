@@ -7,20 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA674566220B3B19006A7572 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA674565220B3B19006A7572 /* SignUpVC.swift */; };
+		AA674568220B43E7006A7572 /* LetterBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA674567220B43E7006A7572 /* LetterBtn.swift */; };
+		AAD3BBB522082E1500CBF0D6 /* NormalBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */; };
 		AAEB168122029B9100FF7014 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168022029B9100FF7014 /* AppDelegate.swift */; };
-		AAEB168322029B9100FF7014 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168222029B9100FF7014 /* ViewController.swift */; };
+		AAEB168322029B9100FF7014 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168222029B9100FF7014 /* ChatVC.swift */; };
 		AAEB168922029B9100FF7014 /* Chat_Version2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168722029B9100FF7014 /* Chat_Version2.xcdatamodeld */; };
 		AAEB168B22029B9200FF7014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAEB168A22029B9200FF7014 /* Assets.xcassets */; };
+		AAEB169C2202C6F100FF7014 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB169A2202C6F100FF7014 /* SWRevealViewController.m */; };
+		AAEB169E2202C7D100FF7014 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB169D2202C7D100FF7014 /* ChannelVC.swift */; };
+		AAEB16A12202D1FE00FF7014 /* RevealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB16A02202D1FE00FF7014 /* RevealVC.swift */; };
+		AAEB16A42202E08A00FF7014 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB16A32202E08A00FF7014 /* Constants.swift */; };
+		AAEB16A62202F71300FF7014 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB16A52202F71300FF7014 /* LoginVC.swift */; };
+		AAEB16A92202F87900FF7014 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB16A82202F87900FF7014 /* AuthService.swift */; };
+		AAEB16AB2202F88400FF7014 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB16AA2202F88400FF7014 /* UserDataService.swift */; };
 		B3093E3D3928B4554378BFFE /* libPods-Chat-Version2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3417D1BD7A5894CFAF5880B /* libPods-Chat-Version2.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA674565220B3B19006A7572 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		AA674567220B43E7006A7572 /* LetterBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBtn.swift; sourceTree = "<group>"; };
+		AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalBtn.swift; sourceTree = "<group>"; };
 		AAEB167D22029B9100FF7014 /* Chat-Version2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat-Version2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB168022029B9100FF7014 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AAEB168222029B9100FF7014 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAEB168222029B9100FF7014 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		AAEB168822029B9100FF7014 /* Chat_Version2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chat_Version2.xcdatamodel; sourceTree = "<group>"; };
 		AAEB168A22029B9200FF7014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAEB168F22029B9200FF7014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAEB16992202C6F000FF7014 /* Chat-Version2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chat-Version2-Bridging-Header.h"; sourceTree = "<group>"; };
+		AAEB169A2202C6F100FF7014 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AAEB169B2202C6F100FF7014 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		AAEB169D2202C7D100FF7014 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		AAEB16A02202D1FE00FF7014 /* RevealVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealVC.swift; sourceTree = "<group>"; };
+		AAEB16A32202E08A00FF7014 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AAEB16A52202F71300FF7014 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		AAEB16A82202F87900FF7014 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		AAEB16AA2202F88400FF7014 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		CEE88007B3548458480368AB /* Pods-Chat-Version2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat-Version2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat-Version2/Pods-Chat-Version2.release.xcconfig"; sourceTree = "<group>"; };
 		D4FA6E8333E7B894780C1910 /* Pods-Chat-Version2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat-Version2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat-Version2/Pods-Chat-Version2.debug.xcconfig"; sourceTree = "<group>"; };
 		E3417D1BD7A5894CFAF5880B /* libPods-Chat-Version2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chat-Version2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,13 +98,65 @@
 		AAEB167F22029B9100FF7014 /* Chat-Version2 */ = {
 			isa = PBXGroup;
 			children = (
-				AAEB168022029B9100FF7014 /* AppDelegate.swift */,
-				AAEB168222029B9100FF7014 /* ViewController.swift */,
+				AAEB16A72202F85300FF7014 /* Services */,
+				AAEB16A22202E07A00FF7014 /* Utilities */,
+				AAEB169622029E5000FF7014 /* VIew */,
+				AAEB169522029E2200FF7014 /* Controller */,
+				AAEB16982202C6BB00FF7014 /* Supporting Files */,
 				AAEB168A22029B9200FF7014 /* Assets.xcassets */,
+				AAEB168022029B9100FF7014 /* AppDelegate.swift */,
 				AAEB168F22029B9200FF7014 /* Info.plist */,
 				AAEB168722029B9100FF7014 /* Chat_Version2.xcdatamodeld */,
 			);
 			path = "Chat-Version2";
+			sourceTree = "<group>";
+		};
+		AAEB169522029E2200FF7014 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAEB168222029B9100FF7014 /* ChatVC.swift */,
+				AAEB169D2202C7D100FF7014 /* ChannelVC.swift */,
+				AAEB16A02202D1FE00FF7014 /* RevealVC.swift */,
+				AAEB16A52202F71300FF7014 /* LoginVC.swift */,
+				AA674565220B3B19006A7572 /* SignUpVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAEB169622029E5000FF7014 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */,
+				AA674567220B43E7006A7572 /* LetterBtn.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		AAEB16982202C6BB00FF7014 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAEB169B2202C6F100FF7014 /* SWRevealViewController.h */,
+				AAEB169A2202C6F100FF7014 /* SWRevealViewController.m */,
+				AAEB16992202C6F000FF7014 /* Chat-Version2-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAEB16A22202E07A00FF7014 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AAEB16A32202E08A00FF7014 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AAEB16A72202F85300FF7014 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AAEB16A82202F87900FF7014 /* AuthService.swift */,
+				AAEB16AA2202F88400FF7014 /* UserDataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +192,7 @@
 				TargetAttributes = {
 					AAEB167C22029B9100FF7014 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -181,8 +256,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAEB168922029B9100FF7014 /* Chat_Version2.xcdatamodeld in Sources */,
-				AAEB168322029B9100FF7014 /* ViewController.swift in Sources */,
+				AAD3BBB522082E1500CBF0D6 /* NormalBtn.swift in Sources */,
+				AAEB168322029B9100FF7014 /* ChatVC.swift in Sources */,
+				AAEB16A62202F71300FF7014 /* LoginVC.swift in Sources */,
+				AA674566220B3B19006A7572 /* SignUpVC.swift in Sources */,
+				AAEB16A92202F87900FF7014 /* AuthService.swift in Sources */,
 				AAEB168122029B9100FF7014 /* AppDelegate.swift in Sources */,
+				AAEB16A12202D1FE00FF7014 /* RevealVC.swift in Sources */,
+				AAEB16AB2202F88400FF7014 /* UserDataService.swift in Sources */,
+				AAEB16A42202E08A00FF7014 /* Constants.swift in Sources */,
+				AAEB169C2202C6F100FF7014 /* SWRevealViewController.m in Sources */,
+				AAEB169E2202C7D100FF7014 /* ChannelVC.swift in Sources */,
+				AA674568220B43E7006A7572 /* LetterBtn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +395,7 @@
 			baseConfigurationReference = D4FA6E8333E7B894780C1910 /* Pods-Chat-Version2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Chat-Version2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,6 +404,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Chat-Version2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Chat-Version2/Supporting Files/Chat-Version2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -328,6 +416,7 @@
 			baseConfigurationReference = CEE88007B3548458480368AB /* Pods-Chat-Version2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Chat-Version2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,6 +425,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Chat-Version2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Chat-Version2/Supporting Files/Chat-Version2-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
