@@ -12,6 +12,8 @@ import Foundation
 
 class UserDataService {
     
+    static let instance = UserDataService()
+    
     // MARK: variables
     public private(set) var id = ""
     public private(set) var name = ""
@@ -27,4 +29,13 @@ class UserDataService {
         self.avatarName = avatarName
         self.avatarColor = avatarColor
     }
+    
+    func setAvatarName(name: String) {
+        self.avatarName = name
+    }
+    
+    func setAvatarColor() {
+        
+    }
 }
+

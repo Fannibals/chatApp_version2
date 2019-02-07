@@ -31,6 +31,8 @@ class ChannelVC: UIViewController {
         self.view.addSubview(self.avatarImgView)
         self.view.addSubview(self.loginBtn)
         self.view.addSubview(self.addChannelBtn)
+        self.view.addSubview(self.window)
+        self.window.isHidden = true
     }
     
     func setLayout() {
@@ -108,10 +110,20 @@ class ChannelVC: UIViewController {
         return btn
     }()
     
+    lazy var window: UIView = {
+        let window = Window(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        return window
+    }()
+    
     // MARK: Actions
     @objc func loginBtnPressed() {
+        if AuthService.instance.isLoggedIn {
+            present(LoginVC(), animated: true, completion: nil)
+        } else {
+            window.isHidden = false
+        }
         // pushViewController doesn't work
-        present(LoginVC(), animated: true, completion: nil)
+        
 //        self.navigationController?.pushViewController(LoginVC(), animated: true)
     }
     

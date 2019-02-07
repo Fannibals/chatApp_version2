@@ -9,12 +9,24 @@
 import UIKit
 
 class SignUpVC: UIViewController {
+    
+    var bgColor: String?
+    var avatarName: String?
 
     // MARK: life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.avatarName == "" {
+            self.avatarImgView.image = UIImage(named: "profileDefault")
+        } else {
+            self.avatarImgView.image = UIImage(named: UserDataService.instance.avatarName)
+            self.avatarName = UserDataService.instance.avatarName
+        }
     }
     
     // MARK: set UI
@@ -37,12 +49,12 @@ class SignUpVC: UIViewController {
     func setLayout() {
         self.closeBtn.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-10)
-            make.top.equalToSuperview().offset(State_Bar_H+10)
+            make.top.equalToSuperview().offset(STATUS_BAR_HEIGHT+10)
             make.size.equalTo(CGSize(width: 40, height: 40))
         }
         
         self.logoLbl.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(State_Bar_H+60)
+            make.top.equalToSuperview().offset(STATUS_BAR_HEIGHT+60)
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: SCREEN_WIDTH*(3.0/4.0), height: 50))
         }
@@ -142,7 +154,7 @@ class SignUpVC: UIViewController {
     
     lazy var email: UITextField = {
         let email = UITextField()
-        email.placeholder = "password"
+        email.placeholder = "email"
         return email
     }()
     
@@ -166,31 +178,83 @@ class SignUpVC: UIViewController {
     
     lazy var avatarImgView: UIImageView = {
         let imgView = UIImageView()
+        imgView.image = UIImage(named: "profileDefault")
+ 
         return imgView
     }()
     
     lazy var chooseAvaBtn: UIButton = {
         let btn = LetterBtn()
         btn.setTitle("Choose avatar", for: .normal)
+        btn.addTarget(self, action: #selector(chooseAvaBtnPressed), for: .touchUpInside)
         return btn
     }()
     
     lazy var chooseBackColorBtn: UIButton = {
         let btn = LetterBtn()
         btn.setTitle("Generate background color", for: .normal)
+        btn.addTarget(self, action: #selector(chooseBackColorBtnPressed), for: .touchUpInside)
         return btn
     }()
     
     lazy var createAccBtn: UIButton = {
         let btn = NormalBtn(value: 0)
         btn.setTitle("Create Account", for: .normal)
+        btn.addTarget(self, action: #selector(createAccBtnPressed), for: .touchUpInside)
         return btn
     }()
     
 
-
     // MARK: actions
     @objc func closeBtnPressed() {
+        //获取根VC
+        var rootVC = self.presentingViewController
+        print(rootVC as Any)
+        while let parent = rootVC?.presentingViewController {
+            rootVC = parent
+        }
+        print(rootVC as Any)
+        //释放所有下级视图
+        rootVC?.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func chooseAvaBtnPressed() {
+        present(AvatarVC(), animated: true, completion: nil)
+    }
+    
+    @objc func chooseBackColorBtnPressed() {
+        let r = CGFloat(arc4random_uniform(255))/255.0
+        let g = CGFloat(arc4random_uniform(255))/255.0
+        let b = CGFloat(arc4random_uniform(255))/255.0
+        let alpha = 1.0
         
+        self.bgColor = "[\(r),\(g),\(b),\(alpha)]"
+        
+        UIView.animate(withDuration: 0.2) {
+            self.avatarImgView.backgroundColor = UIColor.init(red: r, green: g, blue: b, alpha: 1.0)
+        }
+    }
+    
+    @objc func createAccBtnPressed() {
+        guard let name = self.userName.text, self.userName.text != "" else {return}
+        guard let email = self.email.text, self.email.text != "" else {return}
+        guard let avatarName = self.avatarName, self.avatarName != "" else {return}
+        guard let avatarColor = self.bgColor, self.bgColor != "" else {return}
+        
+        AuthService.instance.createUser(name: name, email: email, avatarName: avatarName, avatarColor: avatarColor) { (success) in
+            if success {
+                let alertController = UIAlertController(title: "Thanks for Sign Up",
+                                                        message: "", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+                let okAction = UIAlertAction(title: "ok", style: .default, handler: {
+                    action in
+                    self.closeBtnPressed()
+                })
+                alertController.addAction(cancelAction)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+            }
+        }
     }
 }

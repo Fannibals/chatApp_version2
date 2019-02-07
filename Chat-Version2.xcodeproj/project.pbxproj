@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		AA674566220B3B19006A7572 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA674565220B3B19006A7572 /* SignUpVC.swift */; };
 		AA674568220B43E7006A7572 /* LetterBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA674567220B43E7006A7572 /* LetterBtn.swift */; };
+		AA99FAED220C69F600A03A44 /* AvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99FAEC220C69F600A03A44 /* AvatarVC.swift */; };
+		AA99FAEF220C75DB00A03A44 /* AvatarImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99FAEE220C75DB00A03A44 /* AvatarImgCell.swift */; };
+		AA99FAF1220C8E8600A03A44 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99FAF0220C8E8600A03A44 /* Window.swift */; };
 		AAD3BBB522082E1500CBF0D6 /* NormalBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */; };
 		AAEB168122029B9100FF7014 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168022029B9100FF7014 /* AppDelegate.swift */; };
 		AAEB168322029B9100FF7014 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168222029B9100FF7014 /* ChatVC.swift */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		AA674565220B3B19006A7572 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		AA674567220B43E7006A7572 /* LetterBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBtn.swift; sourceTree = "<group>"; };
+		AA99FAEC220C69F600A03A44 /* AvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVC.swift; sourceTree = "<group>"; };
+		AA99FAEE220C75DB00A03A44 /* AvatarImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImgCell.swift; sourceTree = "<group>"; };
+		AA99FAF0220C8E8600A03A44 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalBtn.swift; sourceTree = "<group>"; };
 		AAEB167D22029B9100FF7014 /* Chat-Version2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat-Version2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB168022029B9100FF7014 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 				AAEB16A02202D1FE00FF7014 /* RevealVC.swift */,
 				AAEB16A52202F71300FF7014 /* LoginVC.swift */,
 				AA674565220B3B19006A7572 /* SignUpVC.swift */,
+				AA99FAEC220C69F600A03A44 /* AvatarVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -128,6 +135,8 @@
 			children = (
 				AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */,
 				AA674567220B43E7006A7572 /* LetterBtn.swift */,
+				AA99FAEE220C75DB00A03A44 /* AvatarImgCell.swift */,
+				AA99FAF0220C8E8600A03A44 /* Window.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -264,10 +273,13 @@
 				AAEB168122029B9100FF7014 /* AppDelegate.swift in Sources */,
 				AAEB16A12202D1FE00FF7014 /* RevealVC.swift in Sources */,
 				AAEB16AB2202F88400FF7014 /* UserDataService.swift in Sources */,
+				AA99FAED220C69F600A03A44 /* AvatarVC.swift in Sources */,
+				AA99FAEF220C75DB00A03A44 /* AvatarImgCell.swift in Sources */,
 				AAEB16A42202E08A00FF7014 /* Constants.swift in Sources */,
 				AAEB169C2202C6F100FF7014 /* SWRevealViewController.m in Sources */,
 				AAEB169E2202C7D100FF7014 /* ChannelVC.swift in Sources */,
 				AA674568220B43E7006A7572 /* LetterBtn.swift in Sources */,
+				AA99FAF1220C8E8600A03A44 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

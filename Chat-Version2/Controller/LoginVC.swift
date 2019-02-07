@@ -35,12 +35,12 @@ class LoginVC: UIViewController {
     func setLayout() {
         self.closeBtn.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-10)
-            make.top.equalToSuperview().offset(State_Bar_H+10)
+            make.top.equalToSuperview().offset(STATUS_BAR_HEIGHT+10)
             make.size.equalTo(CGSize(width: 40, height: 40))
         }
         
         self.logoView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(State_Bar_H+60)
+            make.top.equalToSuperview().offset(STATUS_BAR_HEIGHT+60)
             make.centerX.equalToSuperview().offset(-40)
             make.size.equalTo(CGSize(width: 60, height: 53))
         }

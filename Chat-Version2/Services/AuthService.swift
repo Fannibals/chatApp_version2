@@ -16,6 +16,15 @@ class AuthService {
     // user default
     let defaults = UserDefaults.standard
     
+    var isLoggedIn: Bool {
+        get {
+            return defaults.bool(forKey: "logIn") 
+        }
+        set {
+            defaults.set(newValue, forKey: "logIn")
+        }
+    }
+    
     var authToken: String {
         get {
             return defaults.value(forKey: "token") as! String
@@ -75,11 +84,51 @@ class AuthService {
                 self.authToken = json["token"].stringValue
                 self.userEmail = json["user"].stringValue
                 
+                self.isLoggedIn = true
                 completion(true)
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
             }
         }
+    }
+    
+    func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
+        
+        let lowercasedEmail = email.lowercased()
+        
+        let body: [String: String] = [
+            "name": name,
+            "email": lowercasedEmail,
+            "avatarName": avatarName,
+            "avatarColor" : avatarColor
+        ]
+        // is there any diff?
+        print("self.authToken: \(self.authToken)")
+        print("Auth.instance: \(AuthService.instance.authToken)")
+        
+        let header: [String: String] = [
+            "Authorization": "Bearer \(AuthService.instance.authToken)",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        Alamofire.request(URL_ADDUSER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            print(response)
+            print(type(of: response))
+            if response.result.error == nil {
+                guard let data = response.data else {return}
+                self.setUserInfo(data)
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    
+    func setUserInfo(_ data: Data){
+        let json = try! JSON(data: data)
+        UserDataService.instance.setUserData(id: json["_id"].stringValue, name: json["name"].stringValue, email: json["email"].stringValue, avatarName: json["avatarName"].stringValue, avatarColor: json["avatarColor"].stringValue)
     }
 }
