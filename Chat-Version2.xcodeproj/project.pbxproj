@@ -11,7 +11,6 @@
 		AA674568220B43E7006A7572 /* LetterBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA674567220B43E7006A7572 /* LetterBtn.swift */; };
 		AA99FAED220C69F600A03A44 /* AvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99FAEC220C69F600A03A44 /* AvatarVC.swift */; };
 		AA99FAEF220C75DB00A03A44 /* AvatarImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99FAEE220C75DB00A03A44 /* AvatarImgCell.swift */; };
-		AA99FAF1220C8E8600A03A44 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99FAF0220C8E8600A03A44 /* Window.swift */; };
 		AAD3BBB522082E1500CBF0D6 /* NormalBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */; };
 		AAEB168122029B9100FF7014 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168022029B9100FF7014 /* AppDelegate.swift */; };
 		AAEB168322029B9100FF7014 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168222029B9100FF7014 /* ChatVC.swift */; };
@@ -24,6 +23,7 @@
 		AAEB16A62202F71300FF7014 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB16A52202F71300FF7014 /* LoginVC.swift */; };
 		AAEB16A92202F87900FF7014 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB16A82202F87900FF7014 /* AuthService.swift */; };
 		AAEB16AB2202F88400FF7014 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB16AA2202F88400FF7014 /* UserDataService.swift */; };
+		AAF7A758220F1D8100F407E7 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7A757220F1D8100F407E7 /* ProfileVC.swift */; };
 		B3093E3D3928B4554378BFFE /* libPods-Chat-Version2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3417D1BD7A5894CFAF5880B /* libPods-Chat-Version2.a */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,6 @@
 		AA674567220B43E7006A7572 /* LetterBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBtn.swift; sourceTree = "<group>"; };
 		AA99FAEC220C69F600A03A44 /* AvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVC.swift; sourceTree = "<group>"; };
 		AA99FAEE220C75DB00A03A44 /* AvatarImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImgCell.swift; sourceTree = "<group>"; };
-		AA99FAF0220C8E8600A03A44 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalBtn.swift; sourceTree = "<group>"; };
 		AAEB167D22029B9100FF7014 /* Chat-Version2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat-Version2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB168022029B9100FF7014 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		AAEB16A52202F71300FF7014 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		AAEB16A82202F87900FF7014 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AAEB16AA2202F88400FF7014 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		AAF7A757220F1D8100F407E7 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		CEE88007B3548458480368AB /* Pods-Chat-Version2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat-Version2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat-Version2/Pods-Chat-Version2.release.xcconfig"; sourceTree = "<group>"; };
 		D4FA6E8333E7B894780C1910 /* Pods-Chat-Version2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat-Version2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat-Version2/Pods-Chat-Version2.debug.xcconfig"; sourceTree = "<group>"; };
 		E3417D1BD7A5894CFAF5880B /* libPods-Chat-Version2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chat-Version2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +126,7 @@
 				AAEB16A52202F71300FF7014 /* LoginVC.swift */,
 				AA674565220B3B19006A7572 /* SignUpVC.swift */,
 				AA99FAEC220C69F600A03A44 /* AvatarVC.swift */,
+				AAF7A757220F1D8100F407E7 /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -136,7 +137,6 @@
 				AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */,
 				AA674567220B43E7006A7572 /* LetterBtn.swift */,
 				AA99FAEE220C75DB00A03A44 /* AvatarImgCell.swift */,
-				AA99FAF0220C8E8600A03A44 /* Window.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -268,6 +268,7 @@
 				AAD3BBB522082E1500CBF0D6 /* NormalBtn.swift in Sources */,
 				AAEB168322029B9100FF7014 /* ChatVC.swift in Sources */,
 				AAEB16A62202F71300FF7014 /* LoginVC.swift in Sources */,
+				AAF7A758220F1D8100F407E7 /* ProfileVC.swift in Sources */,
 				AA674566220B3B19006A7572 /* SignUpVC.swift in Sources */,
 				AAEB16A92202F87900FF7014 /* AuthService.swift in Sources */,
 				AAEB168122029B9100FF7014 /* AppDelegate.swift in Sources */,
@@ -279,7 +280,6 @@
 				AAEB169C2202C6F100FF7014 /* SWRevealViewController.m in Sources */,
 				AAEB169E2202C7D100FF7014 /* ChannelVC.swift in Sources */,
 				AA674568220B43E7006A7572 /* LetterBtn.swift in Sources */,
-				AA99FAF1220C8E8600A03A44 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,10 @@ let BASE_URL = "https://chatforexercise.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_ADDUSER = "\(BASE_URL)user/add"
+let URL_FINDBYEMAIL = "\(BASE_URL)user/byEmail/"
 
+// NOTIF
+let NOTIF_USERDATA_CHANGED = Notification.Name("notifUserDataChanged")
 
 // Header
 let HEADER = [ "Content-Type": "application/json; charset=utf-8" ]

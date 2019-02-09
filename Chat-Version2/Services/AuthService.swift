@@ -126,6 +126,27 @@ class AuthService {
         }
     }
     
+    func findUser(completion: @escaping CompletionHandler) {
+        
+        let header: [String: String] = [
+            "Authorization": "Bearer \(AuthService.instance.authToken)",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        Alamofire.request(URL_FINDBYEMAIL+userEmail, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            print(response)
+            print(type(of: response))
+            if response.result.error == nil {
+                guard let data = response.data else {return}
+                self.setUserInfo(data)
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
     
     func setUserInfo(_ data: Data){
         let json = try! JSON(data: data)

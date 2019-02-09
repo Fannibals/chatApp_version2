@@ -238,23 +238,33 @@ class SignUpVC: UIViewController {
     @objc func createAccBtnPressed() {
         guard let name = self.userName.text, self.userName.text != "" else {return}
         guard let email = self.email.text, self.email.text != "" else {return}
+        guard let password = self.passWord.text, self.passWord.text != "" else {return}
         guard let avatarName = self.avatarName, self.avatarName != "" else {return}
         guard let avatarColor = self.bgColor, self.bgColor != "" else {return}
         
-        AuthService.instance.createUser(name: name, email: email, avatarName: avatarName, avatarColor: avatarColor) { (success) in
+        AuthService.instance.registerUser(email: email, password: password) { (success) in
             if success {
-                let alertController = UIAlertController(title: "Thanks for Sign Up",
-                                                        message: "", preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
-                let okAction = UIAlertAction(title: "ok", style: .default, handler: {
-                    action in
-                    self.closeBtnPressed()
+                AuthService.instance.loginUser(email: email, password: password, completion: { (success) in
+                    if success {
+                        AuthService.instance.createUser(name: name, email: email, avatarName: avatarName, avatarColor: avatarColor) { (success) in
+                            if success {
+                                let alertController = UIAlertController(title: "Thanks for Sign Up",
+                                                                        message: "", preferredStyle: .alert)
+                                let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+                                let okAction = UIAlertAction(title: "ok", style: .default, handler: {
+                                    action in
+                                    self.closeBtnPressed()
+                                })
+                                alertController.addAction(cancelAction)
+                                alertController.addAction(okAction)
+                                self.present(alertController, animated: true, completion: nil)
+                                
+                            }
+                        }
+                    }
                 })
-                alertController.addAction(cancelAction)
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-                
             }
         }
+
     }
 }

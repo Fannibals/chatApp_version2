@@ -34,8 +34,35 @@ class UserDataService {
         self.avatarName = name
     }
     
-    func setAvatarColor() {
-        
+    func returnUIColor(components: String) -> UIColor {
+        // "[0.8313725490196079,0.9333333333333333,0.8117647058823529,1.0]",
+        if components == "hexValue" {
+            return UIColor.white
+        }
+        if components.count > 0 {
+            var myArr = components.split(separator: ",")
+            myArr[0] = myArr[0].dropFirst()
+            myArr[3] = myArr[3].dropLast()
+            let rfloat = CGFloat(Float(myArr[0])!)
+            let gfloat = CGFloat(Float(myArr[1])!)
+            let bfloat = CGFloat(Float(myArr[2])!)
+            let afloat = CGFloat(Float(myArr[3])!)
+            
+            let newUIColor = UIColor(red: rfloat, green: gfloat, blue: bfloat, alpha: afloat)
+            return newUIColor
+        }else {
+            return UIColor.lightGray
+        }
+    }
+    
+    func logoutUser() {
+        id = ""
+        avatarName = ""
+        avatarColor = ""
+        email = ""
+        name = ""
+        AuthService.instance.userEmail = ""
+        AuthService.instance.authToken = ""
     }
 }
 

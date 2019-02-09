@@ -20,6 +20,8 @@ class ChannelVC: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setUserInfo()
+        setNotif()
     }
     
     // MARK: set UI
@@ -31,8 +33,6 @@ class ChannelVC: UIViewController {
         self.view.addSubview(self.avatarImgView)
         self.view.addSubview(self.loginBtn)
         self.view.addSubview(self.addChannelBtn)
-        self.view.addSubview(self.window)
-        self.window.isHidden = true
     }
     
     func setLayout() {
@@ -110,21 +110,38 @@ class ChannelVC: UIViewController {
         return btn
     }()
     
-    lazy var window: UIView = {
-        let window = Window(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        return window
-    }()
-    
     // MARK: Actions
     @objc func loginBtnPressed() {
         if AuthService.instance.isLoggedIn {
-            present(LoginVC(), animated: true, completion: nil)
+            // UIModalPresentationStyle ???
+            let profileVC = ProfileVC()
+            profileVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            present(profileVC, animated: true, completion: nil)
         } else {
-            window.isHidden = false
+            present(LoginVC(), animated: true, completion: nil)
         }
-        // pushViewController doesn't work
-        
-//        self.navigationController?.pushViewController(LoginVC(), animated: true)
+    }
+    
+    @objc func userDataChanged( _ notif: Notification) {
+        setUserInfo()
+    }
+    
+    // functions
+    func setUserInfo() {
+        if AuthService.instance.isLoggedIn {
+            self.avatarImgView.image = UIImage(named: UserDataService.instance.avatarName)
+            self.avatarImgView.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
+            self.loginBtn.setTitle(UserDataService.instance.name, for: .normal)
+        } else {
+            self.avatarImgView.image = UIImage(named: "profileDefault")
+            self.avatarImgView.backgroundColor = UIColor.clear
+            self.loginBtn.setTitle(userName, for: .normal)
+        }
+    }
+    
+    // set notifications
+    func setNotif() {
+        NotificationCenter.default.addObserver(self, selector: #selector(userDataChanged(_:)), name: NOTIF_USERDATA_CHANGED, object: nil)
     }
     
 }

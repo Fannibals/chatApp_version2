@@ -172,9 +172,12 @@ class LoginVC: UIViewController {
         // TODO: decide when success or not
         AuthService.instance.loginUser(email: email, password: password) { (success) in
             if success {
-                print("Successfully logged in")
-                self.dismiss(animated: true, completion: nil)
-                
+                AuthService.instance.findUser(completion: { (success) in
+                    if success {
+                        NotificationCenter.default.post(name: NOTIF_USERDATA_CHANGED, object: nil)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
             } else {
                 debugPrint()
             }
