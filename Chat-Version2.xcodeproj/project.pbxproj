@@ -12,6 +12,12 @@
 		AA99FAED220C69F600A03A44 /* AvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99FAEC220C69F600A03A44 /* AvatarVC.swift */; };
 		AA99FAEF220C75DB00A03A44 /* AvatarImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99FAEE220C75DB00A03A44 /* AvatarImgCell.swift */; };
 		AAD3BBB522082E1500CBF0D6 /* NormalBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */; };
+		AAEA6F1E2210065900E58955 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA6F1D2210065900E58955 /* AddChannelVC.swift */; };
+		AAEA6F2122101DBE00E58955 /* Channnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA6F2022101DBE00E58955 /* Channnel.swift */; };
+		AAEA6F2322101F9900E58955 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA6F2222101F9900E58955 /* MessageService.swift */; };
+		AAEA6F252210224F00E58955 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA6F242210224F00E58955 /* ChannelCell.swift */; };
+		AAEA6F292210329B00E58955 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA6F282210329B00E58955 /* SocketService.swift */; };
+		AAEA6F2B2211CCB400E58955 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA6F2A2211CCB400E58955 /* Message.swift */; };
 		AAEB168122029B9100FF7014 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168022029B9100FF7014 /* AppDelegate.swift */; };
 		AAEB168322029B9100FF7014 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168222029B9100FF7014 /* ChatVC.swift */; };
 		AAEB168922029B9100FF7014 /* Chat_Version2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAEB168722029B9100FF7014 /* Chat_Version2.xcdatamodeld */; };
@@ -33,6 +39,12 @@
 		AA99FAEC220C69F600A03A44 /* AvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVC.swift; sourceTree = "<group>"; };
 		AA99FAEE220C75DB00A03A44 /* AvatarImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImgCell.swift; sourceTree = "<group>"; };
 		AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalBtn.swift; sourceTree = "<group>"; };
+		AAEA6F1D2210065900E58955 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
+		AAEA6F2022101DBE00E58955 /* Channnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channnel.swift; sourceTree = "<group>"; };
+		AAEA6F2222101F9900E58955 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		AAEA6F242210224F00E58955 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		AAEA6F282210329B00E58955 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		AAEA6F2A2211CCB400E58955 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		AAEB167D22029B9100FF7014 /* Chat-Version2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat-Version2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB168022029B9100FF7014 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAEB168222029B9100FF7014 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
@@ -83,6 +95,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AAEA6F1F22101BB800E58955 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAEA6F2022101DBE00E58955 /* Channnel.swift */,
+				AAEA6F2A2211CCB400E58955 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AAEB167422029B9100FF7014 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +127,7 @@
 			children = (
 				AAEB16A72202F85300FF7014 /* Services */,
 				AAEB16A22202E07A00FF7014 /* Utilities */,
+				AAEA6F1F22101BB800E58955 /* Model */,
 				AAEB169622029E5000FF7014 /* VIew */,
 				AAEB169522029E2200FF7014 /* Controller */,
 				AAEB16982202C6BB00FF7014 /* Supporting Files */,
@@ -127,6 +149,7 @@
 				AA674565220B3B19006A7572 /* SignUpVC.swift */,
 				AA99FAEC220C69F600A03A44 /* AvatarVC.swift */,
 				AAF7A757220F1D8100F407E7 /* ProfileVC.swift */,
+				AAEA6F1D2210065900E58955 /* AddChannelVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +160,7 @@
 				AAD3BBB422082E1500CBF0D6 /* NormalBtn.swift */,
 				AA674567220B43E7006A7572 /* LetterBtn.swift */,
 				AA99FAEE220C75DB00A03A44 /* AvatarImgCell.swift */,
+				AAEA6F242210224F00E58955 /* ChannelCell.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -164,6 +188,8 @@
 			children = (
 				AAEB16A82202F87900FF7014 /* AuthService.swift */,
 				AAEB16AA2202F88400FF7014 /* UserDataService.swift */,
+				AAEA6F2222101F9900E58955 /* MessageService.swift */,
+				AAEA6F282210329B00E58955 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -266,16 +292,22 @@
 			files = (
 				AAEB168922029B9100FF7014 /* Chat_Version2.xcdatamodeld in Sources */,
 				AAD3BBB522082E1500CBF0D6 /* NormalBtn.swift in Sources */,
+				AAEA6F2322101F9900E58955 /* MessageService.swift in Sources */,
+				AAEA6F2122101DBE00E58955 /* Channnel.swift in Sources */,
 				AAEB168322029B9100FF7014 /* ChatVC.swift in Sources */,
 				AAEB16A62202F71300FF7014 /* LoginVC.swift in Sources */,
 				AAF7A758220F1D8100F407E7 /* ProfileVC.swift in Sources */,
 				AA674566220B3B19006A7572 /* SignUpVC.swift in Sources */,
 				AAEB16A92202F87900FF7014 /* AuthService.swift in Sources */,
+				AAEA6F252210224F00E58955 /* ChannelCell.swift in Sources */,
+				AAEA6F1E2210065900E58955 /* AddChannelVC.swift in Sources */,
 				AAEB168122029B9100FF7014 /* AppDelegate.swift in Sources */,
 				AAEB16A12202D1FE00FF7014 /* RevealVC.swift in Sources */,
 				AAEB16AB2202F88400FF7014 /* UserDataService.swift in Sources */,
+				AAEA6F292210329B00E58955 /* SocketService.swift in Sources */,
 				AA99FAED220C69F600A03A44 /* AvatarVC.swift in Sources */,
 				AA99FAEF220C75DB00A03A44 /* AvatarImgCell.swift in Sources */,
+				AAEA6F2B2211CCB400E58955 /* Message.swift in Sources */,
 				AAEB16A42202E08A00FF7014 /* Constants.swift in Sources */,
 				AAEB169C2202C6F100FF7014 /* SWRevealViewController.m in Sources */,
 				AAEB169E2202C7D100FF7014 /* ChannelVC.swift in Sources */,

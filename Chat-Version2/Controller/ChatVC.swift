@@ -15,7 +15,22 @@ class ChatVC: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setNotIF()
     }
+    
+    func setNotIF() {
+        //
+        if AuthService.instance.isLoggedIn {
+            AuthService.instance.findUser(completion: { (success) in
+                NotificationCenter.default.post(name: NOTIF_USERDATA_CHANGED, object: nil)
+            })
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userDidChanged(_:)), name: NOTIF_USERDATA_CHANGED, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
+    }
+
     
     func setUI() {
         self.view.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
@@ -78,5 +93,24 @@ class ChatVC: UIViewController {
         tableView.backgroundColor = UIColor.clear
         return tableView
     }()
+    
+    // MARK: actions
+    @objc func userDidChanged(_ notif: Notification) {
+        AuthService.instance.findUser { (success) in
+            if success {
+                MessageService.instance.findAllChannel(completion: { (success) in
+                    if success {
+                        
+                    }
+                })
+            }
+        }
+    }
+    
+    @objc func channelSelected(_ notif: Notification) {
+        guard let channelName = MessageService.instance.selectedChannel?.channelName else {return}
+        self.channelLbl.text = "#\(channelName)"
+    }
+    
 }
 

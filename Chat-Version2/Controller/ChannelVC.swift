@@ -20,8 +20,12 @@ class ChannelVC: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
-        setUserInfo()
         setNotif()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setUserInfo()
+        self.channelTableView.reloadData()
     }
     
     // MARK: set UI
@@ -30,9 +34,12 @@ class ChannelVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.view.addSubview(self.appTitle)
         self.view.addSubview(self.subTitles)
+        self.view.addSubview(self.channelTableView)
         self.view.addSubview(self.avatarImgView)
         self.view.addSubview(self.loginBtn)
         self.view.addSubview(self.addChannelBtn)
+        self.channelTableView.delegate = self
+        self.channelTableView.dataSource = self
     }
     
     func setLayout() {
@@ -46,6 +53,12 @@ class ChannelVC: UIViewController {
             make.top.equalTo(self.appTitle.snp.bottom).offset(10)
             make.left.equalTo(self.appTitle.snp.left)
             make.size.equalTo(CGSize(width: 90, height: 40))
+        }
+        
+        self.channelTableView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.subTitles.snp.bottom).offset(10)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(self.avatarImgView.snp.top).offset(-10)
         }
         
         self.avatarImgView.snp.makeConstraints { (make) in
@@ -85,6 +98,13 @@ class ChannelVC: UIViewController {
         return label
     }()
     
+    lazy var channelTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = UIColor.clear
+        tableView.register(ChannelCell.self, forCellReuseIdentifier: "channelCell")
+        return tableView
+    }()
+    
     lazy var avatarImgView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: avatarName)
@@ -107,6 +127,7 @@ class ChannelVC: UIViewController {
     lazy var addChannelBtn: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(named: "addChannelButton"), for: .normal)
+        btn.addTarget(self, action: #selector(addChannelBtnPressed), for: .touchUpInside)
         return btn
     }()
     
@@ -122,8 +143,27 @@ class ChannelVC: UIViewController {
         }
     }
     
+    @objc func addChannelBtnPressed() {
+        if AuthService.instance.isLoggedIn {
+            let channelVC = AddChannelVC()
+            channelVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            present(channelVC, animated: true, completion: nil)
+        } else {
+            // do nothing
+        }
+    }
+    
     @objc func userDataChanged( _ notif: Notification) {
         setUserInfo()
+    }
+    
+    @objc func channelLoaded( _ notif: Notification){
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.channelTableView.reloadData()
+            }
+        }
+        self.channelTableView.reloadData()
     }
     
     // functions
@@ -142,6 +182,40 @@ class ChannelVC: UIViewController {
     // set notifications
     func setNotif() {
         NotificationCenter.default.addObserver(self, selector: #selector(userDataChanged(_:)), name: NOTIF_USERDATA_CHANGED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(channelLoaded(_:)), name: NOTIF_CHANNEL_LOADED, object: nil)
     }
+    
+}
+
+
+extension ChannelVC : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = self.channelTableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
+            print("cell is called successfully")
+            let channel = MessageService.instance.channels[indexPath.row]
+            cell.configureCell(channel: channel)
+            cell.backgroundColor = UIColor.clear
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+        
+        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+        self.revealViewController()?.revealToggle(animated: true)
+    }
+    
+    
     
 }

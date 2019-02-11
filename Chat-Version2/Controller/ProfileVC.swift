@@ -9,9 +9,6 @@
 import UIKit
 import SnapKit
 
-let PROFILE_WIDTH = SCREEN_WIDTH * (9.0/10.0)
-let PROFILE_HEIGHT = SCREEN_HEIGHT * (1.3/3.0)
-
 class ProfileVC: UIViewController {
     
     var avatarName: String = ""
