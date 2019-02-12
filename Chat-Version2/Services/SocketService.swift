@@ -42,6 +42,13 @@ class SocketService: NSObject {
             guard let id = dataArray[2] as? String else {return}
             let channel = Channel(name, desc, id)
             MessageService.instance.channels.append(channel)
+            completion(true)
         }
+    }
+    
+    func addMessage(messageBody: String, userId: String, channelId: String, completion: @escaping CompletionHandler) {
+        let user = UserDataService.instance
+        socket.emit("newMessage", messageBody, userId, channelId, user.name, user.avatarName, user.avatarColor)
+        completion(true)
     }
 }

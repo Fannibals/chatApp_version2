@@ -21,11 +21,12 @@ class ChannelVC: UIViewController {
         setUI()
         setLayout()
         setNotif()
+        setChannelView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setUserInfo()
-        self.channelTableView.reloadData()
     }
     
     // MARK: set UI
@@ -158,11 +159,6 @@ class ChannelVC: UIViewController {
     }
     
     @objc func channelLoaded( _ notif: Notification){
-        SocketService.instance.getChannel { (success) in
-            if success {
-                self.channelTableView.reloadData()
-            }
-        }
         self.channelTableView.reloadData()
     }
     
@@ -185,6 +181,13 @@ class ChannelVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(channelLoaded(_:)), name: NOTIF_CHANNEL_LOADED, object: nil)
     }
     
+    func setChannelView() {
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.channelTableView.reloadData()
+            }
+        }
+    }
 }
 
 
@@ -199,7 +202,6 @@ extension ChannelVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.channelTableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
-            print("cell is called successfully")
             let channel = MessageService.instance.channels[indexPath.row]
             cell.configureCell(channel: channel)
             cell.backgroundColor = UIColor.clear

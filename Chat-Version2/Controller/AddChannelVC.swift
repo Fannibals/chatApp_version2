@@ -153,8 +153,6 @@ class AddChannelVC: UIViewController {
         guard let desc = descriptionTF.text, descriptionTF.text != "" else {return}
         SocketService.instance.addChannel(channelName: name, channelDescription: desc) { (success) in
             if success {
-                NotificationCenter.default.post(name: NOTIF_CHANNEL_LOADED, object: nil)
-                sleep(2)
                 self.dismiss(animated: true, completion: nil)
             }
         }
